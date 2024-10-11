@@ -1,0 +1,31 @@
+{
+    "altLogo": "logo",
+    "logo": "assets/images/shared/disneylogo.png",
+    "navLinks": [
+      {
+        "title": "HOME",
+        "icon": "<i class=\"fa-solid fa-house\"></i>"
+      },
+      {
+        "title": "SEARCH",
+        "icon": "<i class=\"fa-solid fa-magnifying-glass\"></i>"
+      },
+      {
+        "title": "WATCHLIST",
+        "icon": "<i class=\"fa-solid fa-plus\"></i>"
+      },
+      {
+        "title": "ORIGINALS",
+        "icon": "<i class=\"fa-solid fa-star\"></i>"
+      },
+      {
+        "title": "MOVIES",
+        "icon": "<i class=\"fa-solid fa-tape\"></i>"
+      },
+      {
+        "title": "SERIES",
+        "icon": "<i class=\"fa-solid fa-tv\"></i>"
+      }
+    ]
+  }
+  

@@ -1,0 +1,23 @@
+<header>
+  <div class="flex justify-center md:hidden" *ngIf="data">
+    <a href="#">
+      <img class="h-[50px]" [src]="data.logo" alt="{{data.altLogo}}">
+    </a>
+  </div>
+  <nav *ngIf="data">
+    <div class="container hidden md:flex">
+      <ul class="flex justify-between items-center gap-8">
+        <li>
+          <a href="#">
+            <img class="h-[50px]" [src]="data.logo" alt="{{data.altLogo}}">
+          </a>
+        </li>
+        <li *ngFor="let link of data.navLinks">
+          <span class="me-1" [innerHTML]="link.icon"></span>
+          <a href="#">{{link.title}}</a>
+        </li>
+      </ul>
+      <app-avatar></app-avatar>
+    </div>
+  </nav>
+</header>
