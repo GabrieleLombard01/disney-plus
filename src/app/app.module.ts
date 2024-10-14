@@ -11,6 +11,7 @@ import { NavFooterComponent } from './components/shared/elements/navFooter/navFo
 import { HomeComponent } from './components/pages/home/home.component';
 import { SearchComponent } from './components/pages/search/search.component';
 import { AvatarComponent } from './components/shared/elements/avatar/avatar.component';
+import { AvatarInfoComponent } from './components/shared/elements/avatarInfo/avatarInfo.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AvatarComponent } from './components/shared/elements/avatar/avatar.comp
     FooterComponent,
     NavFooterComponent,
     AvatarComponent,
+    AvatarInfoComponent,
     // Pagine:
     HomeComponent,
     SearchComponent

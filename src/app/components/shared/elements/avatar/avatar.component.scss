@@ -1,0 +1,15 @@
+.avatarContainer{
+    border: solid yellow 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 118px;
+}
+.avatarContainer .avatar{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-image: url(../../../../../assets/images/shared/bart.png);
+    background-size: cover;
+}
