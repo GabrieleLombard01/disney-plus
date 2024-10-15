@@ -1,0 +1,14 @@
+[
+  {
+    "title": "HOME",
+    "icon": "<i class=\"fa-solid fa-house\"></i>"
+  },
+  {
+    "title": "SEARCH",
+    "icon": "<i class=\"fa-solid fa-magnifying-glass\"></i>"
+  },
+  {
+    "title": "DOWNLOAD",
+    "icon": "<i class=\"fa-solid fa-download\"></i>"
+  }
+]
