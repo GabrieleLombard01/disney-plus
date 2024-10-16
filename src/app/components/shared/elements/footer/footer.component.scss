@@ -1,3 +1,15 @@
+footer .xlFooter{
+    background-color: #0e0b14;
+    width: 100%;
+}
+.xlFooter .logoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.xlFooter a{
+    font-size: 12px;
+}
 footer .cloneBanner{
     background-color: rgb(218, 0, 0);
     width: 100%;

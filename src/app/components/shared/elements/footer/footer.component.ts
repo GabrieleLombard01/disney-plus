@@ -6,7 +6,7 @@ interface Links {
 }
 interface FooterData {
   paragraph: string;
-  navLinks: Links[];
+  links: Links[];
   disneyRights: string;
 }
 
@@ -21,6 +21,8 @@ export class FooterComponent implements OnInit {
 
   urlData: string = '/assets/data/footerData.json';
 
+  logo: string = "assets/images/shared/disneylogo.png";
+
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -29,8 +31,10 @@ export class FooterComponent implements OnInit {
 
   fetchData() {
     this.http.get<FooterData>(this.urlData).subscribe((data) => {
+      console.log('Dati ricevuti:', data);
       this.data = data;
     });
   }
+  
 
 }
