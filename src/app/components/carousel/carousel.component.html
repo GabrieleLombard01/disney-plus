@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="slider">
+    <div
+      class="slide"
+      *ngFor="let slide of slides; let i = index"
+      [ngClass]="{ 'active': i === currentIndex }"
+    >
+      <div class="relative w-full h-full">
+        <img [src]="slide.src" alt="Slide {{ i + 1 }}" class="carousel-img" />
+        <img class="cover-img" [src]="cover[i].src" alt="Cover {{ i + 1 }}">
+      </div>
+    </div>
+  
+    <button (click)="prev()" class="prev"><i class="fa-solid fa-caret-left fa-xl"></i></button>
+    <button (click)="next()" class="next"><i class="fa-solid fa-caret-right fa-xl"></i></button>
+  </div>
+
+</div>
