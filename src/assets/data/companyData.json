@@ -1,0 +1,29 @@
+{
+    "img": [
+        {
+            "id": "0",
+            "name": "Disney",
+            "src": "assets/images/home/disney_logo.png"
+        },
+        {
+            "id": "1",
+            "name": "Pixar",
+            "src": "assets/images/home/pixar_logo.png"
+        },
+        {
+            "id": "2",
+            "name": "Marvel",
+            "src": "assets/images/home/marvel_logo.png"
+        },
+        {
+            "id": "3",
+            "name": "Star Wars",
+            "src": "assets/images/home/starwars_logo.png"
+        },
+        {
+            "id": "4",
+            "name": "National Geographic",
+            "src": "assets/images/home/natgeo_logo.png"
+        }
+    ]
+}

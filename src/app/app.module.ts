@@ -13,6 +13,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { SearchComponent } from './components/pages/search/search.component';
 import { AvatarComponent } from './components/shared/elements/avatar/avatar.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { CompanyFilterComponent } from './components/companyFilter/companyFilter.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     HomeComponent,
     SearchComponent,
     // Altri componenti:
-    CarouselComponent
+    CarouselComponent,
+    CompanyFilterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,21 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+
+interface Slide {
+  id: number;
+  src: string;
+}
+
+interface Cover {
+  id: number;
+  src: string;
+}
+
+interface CarouselData {
+  slides: Slide[];
+  covers: Cover[];
+}
 
 @Component({
   selector: 'app-carousel',
@@ -20,35 +36,34 @@ import { Component } from '@angular/core';
 })
 export class CarouselComponent {
 
-  slides = [
-    { id: 1, src: 'assets/images/home/shark.png' },
-    { id: 2, src: 'assets/images/home/simpson.png' },
-    { id: 3, src: 'assets/images/home/marvel.png' },
-    { id: 4, src: 'assets/images/home/coco.png' },
-    { id: 5, src: 'assets/images/home/other.png' }
-    
-  ];
-  cover= [
-    { id: 1, src: 'assets/images/home/natgeo_logo.png' },
-    { id: 2, src: 'assets/images/home/simpsons_logo.png' },
-    { id: 3, src: 'assets/images/home/marvel_logo.png' },
-    { id: 4, src: 'assets/images/home/coco_logo.png' },
-    { id: 5, src: 'assets/images/home/more_logo.png' }
-  ]
-
+  slides: Slide[] = [];
+  covers: Cover[] = [];
   currentIndex = 0;
+  urlData: string = '/assets/data/carouselData.json';
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.fetchData();
+  }
 
   get currentSlide() {
     return this.slides[this.currentIndex];
   }
 
-  next() {
+  fetchData(): void {
+    this.http.get<CarouselData>(this.urlData).subscribe((data) => {
+      this.slides = data.slides;
+      this.covers = data.covers;
+    });
+  }
+
+  next(): void {
     this.currentIndex = (this.currentIndex + 1) % this.slides.length;
   }
-  
-  prev() {
+
+  prev(): void {
     this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
   }
-  
 
 }

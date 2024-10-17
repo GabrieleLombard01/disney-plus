@@ -1,0 +1,46 @@
+{
+    "slides": [
+        {
+            "id": "0",
+            "src": "assets/images/home/shark.png"
+        },
+        {
+            "id": "1",
+            "src": "assets/images/home/simpson.png"
+        },
+        {
+            "id": "2",
+            "src": "assets/images/home/marvel.png"
+        },
+        {
+            "id": "3",
+            "src": "assets/images/home/coco.png"
+        },
+        {
+            "id": "4",
+            "src": "assets/images/home/other.png"
+        }
+    ],
+    "covers": [
+        {
+            "id": "0",
+            "src": "assets/images/home/sharks_logo.png"
+        },
+        {
+            "id": "1",
+            "src": "assets/images/home/simpsons_logo.png"
+        },
+        {
+            "id": "2",
+            "src": "assets/images/home/msmarvel_logo2.png"
+        },
+        {
+            "id": "3",
+            "src": "assets/images/home/coco_logo.png"
+        },
+        {
+            "id": "4",
+            "src": "assets/images/home/more_logo.png"
+        }
+    ]
+}
