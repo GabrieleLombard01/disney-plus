@@ -14,6 +14,8 @@ import { SearchComponent } from './components/pages/search/search.component';
 import { AvatarComponent } from './components/shared/elements/avatar/avatar.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CompanyFilterComponent } from './components/companyFilter/companyFilter.component';
+import { CommonModule } from '@angular/common';
+import { SliderComponent } from './components/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +31,15 @@ import { CompanyFilterComponent } from './components/companyFilter/companyFilter
     SearchComponent,
     // Altri componenti:
     CarouselComponent,
-    CompanyFilterComponent
+    CompanyFilterComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule 
+    BrowserAnimationsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

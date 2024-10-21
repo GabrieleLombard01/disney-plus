@@ -18,7 +18,10 @@
     </div>
     <div class="cloneBanner">
         <div class="container">
-            <p class="text-center">{{data?.paragraph}}</p>
+            <p class="text-center">
+                {{data?.paragraph}}
+                <a target=”_blank” [href]="siteLink" class="text-blue-900 font-bold hover:underline">{{siteName}}</a>
+            </p>
         </div>
     </div>
 </footer>

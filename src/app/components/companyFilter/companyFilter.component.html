@@ -1,19 +1,7 @@
 <div class="container px-2">
   <div class="flex justify-between items-center">
-    <div class="companyOption">
-      <img src="assets/images/home/disney_logo.png" alt="Disney">
-    </div>
-    <div class="companyOption">
-      <img src="assets/images/home/pixar_logo.png" alt="Pixar">
-    </div>
-    <div class="companyOption">
-      <img src="assets/images/home/marvel_logo.png" alt="Marvel">
-    </div>
-    <div class="companyOption">
-      <img src="assets/images/home/starwars_logo.png" alt="Star Wars">
-    </div>
-    <div class="companyOption">
-      <img src="assets/images/home/natgeo_logo.png" alt="National Geographic">
+    <div class="companyOption" *ngFor="let image of img">
+      <img [src]="image.src" [alt]="image.name">
     </div>
   </div>
 </div>

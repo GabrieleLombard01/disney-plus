@@ -17,6 +17,10 @@ interface FooterData {
 })
 export class FooterComponent implements OnInit {
 
+  siteName: string = ' Disney +';
+
+  siteLink: string = 'https://www.disneyplus.com/'
+  
   data: FooterData | undefined;
 
   urlData: string = '/assets/data/footerData.json';
