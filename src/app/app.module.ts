@@ -16,6 +16,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CompanyFilterComponent } from './components/companyFilter/companyFilter.component';
 import { CommonModule } from '@angular/common';
 import { SliderComponent } from './components/slider/slider.component';
+import { SlideDetailComponent } from './components/shared/slideDetail/slideDetail.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SliderComponent } from './components/slider/slider.component';
     // Altri componenti:
     CarouselComponent,
     CompanyFilterComponent,
-    SliderComponent
+    SliderComponent,
+    SlideDetailComponent
   ],
   imports: [
     BrowserModule,

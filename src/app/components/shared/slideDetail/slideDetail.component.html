@@ -1,0 +1,43 @@
+<app-layout>
+
+  <div class="container pt-5">
+
+    <div class="flex flex-col sm:flex-row sm:items-start sm:gap-4">
+
+      <figure class="mx-auto sm:mx-0 sm:flex-shrink-0">
+        <img *ngIf="posterPath" [src]="getImageUrl(posterPath)" alt="{{ title }}" class="poster" />
+      </figure>
+    
+      <div class="flex flex-col sm:justify-center">
+        <h1 class="title text-center sm:text-left">{{ title }}</h1>
+        <p class="description text-justify m-4 sm:m-0 sm:mt-2">{{ description }}</p>
+      </div>
+    
+    </div>
+    
+
+
+    <!-- <div class="slide-detail">
+      <div class="detail-header">
+        <img *ngIf="posterPath" [src]="getImageUrl(posterPath)" alt="{{ title }}" class="poster" />
+        <div class="info">
+          <div class="metadata">
+            <span *ngIf="releaseDate">Uscita: {{ releaseDate }}</span>
+            <span *ngIf="runtime"> | Runtime: {{ runtime }} mins</span>
+          </div>
+          <div class="genres">
+            <span *ngFor="let genre of genres" class="genre">{{ genre }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="action-button">Play</button>
+        <button class="action-button">Trailer</button>
+        <button class="action-button">Add to Watchlist</button>
+      </div>
+    </div> -->
+
+  </div>
+  
+</app-layout>
+

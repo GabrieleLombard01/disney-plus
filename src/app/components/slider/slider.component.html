@@ -2,7 +2,11 @@
   <button class="nav-btn left" (click)="prev()">&#10094;</button>
   
   <div class="carousel-slider">
-    <div class="carousel-card" *ngFor="let card of displayCards">
+    <div 
+      class="carousel-card cursor-pointer" 
+      *ngFor="let card of displayCards"
+      (click)="onCardClick(card)"
+      >
       <img [src]="getImageUrl(card.poster_path)" alt="{{card.title}}" />
     </div>
   </div>

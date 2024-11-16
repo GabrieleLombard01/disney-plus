@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-slider',
@@ -12,7 +13,9 @@ export class SliderComponent implements OnInit, OnChanges {
   isTransitioning = false;
   visibleCards = 5;
 
-  constructor() {}
+  constructor(
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     if (this.cards && this.cards.length > 0) {
@@ -103,4 +106,18 @@ export class SliderComponent implements OnInit, OnChanges {
   getImageUrl(path: string): string {
     return `https://image.tmdb.org/t/p/w500${path}`;
   }
+
+  onCardClick(card: any): void {
+    this.router.navigate(['/slide-detail'], { 
+      queryParams: { 
+        title: card.title,
+        poster_path: card.poster_path,
+        description: card.overview,
+        genres: card.genre_ids?.join(','),
+        runtime: card.runtime,
+        release_date: card.release_date
+      } 
+    });
+  }
+  
 }

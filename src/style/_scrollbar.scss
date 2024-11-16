@@ -1,0 +1,29 @@
+/* Stile della barra di scorrimento */
+::-webkit-scrollbar {
+    width: 9px; /* Larghezza della scrollbar */
+    height: 12px; /* Altezza della scrollbar (per scorrimento orizzontale) */
+  }
+  
+  /* Stile del tracciato della scrollbar (il contenitore) */
+  ::-webkit-scrollbar-track {
+    background: #c0c0c0; /* Colore di sfondo del tracciato */
+    border-radius: 3px; /* Angoli arrotondati */
+  }
+  
+  /* Stile della "maniglia" (il cursore) */
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* Colore del cursore */
+    border-radius: 6px; /* Angoli arrotondati */
+    border: 1px solid #f0f0f0; /* Spazio attorno al cursore */
+  }
+  
+  /* Stile della maniglia quando viene hoverata */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #414141; /* Colore del cursore al passaggio del mouse */
+  }
+  
+  /* Stile per scrollbar orizzontale */
+  ::-webkit-scrollbar-horizontal {
+    height: 9px;
+  }
+  
