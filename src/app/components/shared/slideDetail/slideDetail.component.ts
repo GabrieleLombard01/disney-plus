@@ -14,6 +14,7 @@ export class SlideDetailComponent implements OnInit {
   genres: string[] = [];
   runtime: number | null = null;
   releaseDate: string | null = null;
+  backdropPath: string | null = null;
 
   constructor(private route: ActivatedRoute) {}
 
@@ -25,6 +26,7 @@ export class SlideDetailComponent implements OnInit {
       this.genres = params['genres'] ? params['genres'].split(',') : [];
       this.runtime = params['runtime'] ? +params['runtime'] : null;
       this.releaseDate = params['release_date'] || null;
+      this.backdropPath = params['backdrop_path'];
     });
   }
 
