@@ -6,7 +6,7 @@
       class="carousel-card cursor-pointer" 
       *ngFor="let card of displayCards"
       (click)="onCardClick(card)"
-      >
+    >
       <img [src]="getImageUrl(card.poster_path)" alt="{{card.title}}" />
     </div>
   </div>

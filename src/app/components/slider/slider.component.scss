@@ -1,5 +1,4 @@
 .carousel-container {
-  margin-top: 4rem;
   display: flex;
   align-items: center;
   position: relative;
@@ -15,14 +14,21 @@
 }
 
 .carousel-card {
-  flex: 0 0 calc((100% - (4 * 10px)) / 5); // Mostra 5 carte alla volta
+  flex: 0 0 calc((100% - (4 * 10px)) / 5); /* Mostra 5 carte alla volta */
   box-sizing: border-box;
   background-color: #333;
   color: #fff;
-  padding: 10px;
+  margin: 15px;
   border-radius: 10px;
   text-align: center;
   height: 280px;
+  transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
+  border: 0px solid transparent;
+}
+
+.carousel-card:hover {
+  transform: scale(1.05);
+  border: 3px solid white;
 }
 
 .carousel-card img {

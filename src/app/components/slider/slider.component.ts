@@ -13,9 +13,7 @@ export class SliderComponent implements OnInit, OnChanges {
   isTransitioning = false;
   visibleCards = 5;
 
-  constructor(
-    private router: Router
-  ) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     if (this.cards && this.cards.length > 0) {
@@ -33,9 +31,8 @@ export class SliderComponent implements OnInit, OnChanges {
     const startCards = this.cards.slice(0, this.visibleCards);
     const endCards = this.cards.slice(-this.visibleCards);
     this.displayCards = [...endCards, ...this.cards, ...startCards];
-    this.currentIndex = this.visibleCards; // Inizia dalla prima card reale
+    this.currentIndex = this.visibleCards;
 
-    // Posticipa l'esecuzione di jumpToCard per permettere al DOM di aggiornarsi
     setTimeout(() => {
       this.jumpToCard();
     }, 0);
@@ -70,7 +67,7 @@ export class SliderComponent implements OnInit, OnChanges {
   scrollCarousel(): void {
     const slider = document.querySelector('.carousel-slider') as HTMLElement;
     const card = slider.querySelector('.carousel-card') as HTMLElement;
-    if (!card) return; // Controllo per evitare errori se card non è ancora disponibile
+    if (!card) return;
     const cardWidth = card.clientWidth;
     const gap = 10;
     const totalScroll = this.currentIndex * (cardWidth + gap);
@@ -90,12 +87,12 @@ export class SliderComponent implements OnInit, OnChanges {
       this.currentIndex = this.cards.length + this.visibleCards - 1;
       this.jumpToCard();
     }
-  }
+  };
 
   jumpToCard(): void {
     const slider = document.querySelector('.carousel-slider') as HTMLElement;
     const card = slider.querySelector('.carousel-card') as HTMLElement;
-    if (!card) return; // Controllo per evitare errori
+    if (!card) return;
     const cardWidth = card.clientWidth;
     const gap = 10;
     const totalScroll = this.currentIndex * (cardWidth + gap);
@@ -108,16 +105,20 @@ export class SliderComponent implements OnInit, OnChanges {
   }
 
   onCardClick(card: any): void {
-    this.router.navigate(['/slide-detail'], { 
-      queryParams: { 
+    this.router.navigate(['/slide-detail'], {
+      queryParams: {
         title: card.title,
         poster_path: card.poster_path,
         description: card.overview,
         genres: card.genre_ids?.join(','),
         runtime: card.runtime,
-        release_date: card.release_date
-      } 
+        release_date: card.release_date,
+      },
+    }).then(() => {
+      // window.location.reload();
+      if (typeof window !== 'undefined') {
+        window.scrollTo(0, 0);
+      }
     });
   }
-  
 }

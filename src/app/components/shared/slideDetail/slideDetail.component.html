@@ -1,49 +1,44 @@
 <app-layout>
-
   <figure class="posterContainer">
     <img *ngIf="posterPath" [src]="getImageUrl(posterPath)" alt="{{ title }}" />
   </figure>
-
-
-
-
-
-
-  <div class="container pt-5">
-
-    <div class="mt-80 flex flex-col sm:flex-row sm:items-start sm:gap-4">
-
-      <figure class="cover mx-auto sm:mx-0 sm:flex-shrink-0">
-        <img *ngIf="posterPath" [src]="getImageUrl(posterPath)" alt="{{ title }}" class="poster" />
-      </figure>
-    
-      <div class="flex flex-col sm:justify-center">
-        <h1 class="title text-center sm:text-left">{{ title }}</h1>
-        <p class="description text-justify m-4 sm:m-0 sm:mt-2">{{ description }}</p>
+  <div class="container absolute left-0 right-0 top-12 md:top-28">
+      <div class="detailHeader pt-10">
+        <figure class="cover px-2">
+          <img *ngIf="posterPath" [src]="getImageUrl(posterPath)" alt="{{ title }}" />
+        </figure>
+        <h1 class="title px-2">{{title}}</h1>
       </div>
-    
-    </div>
-    
+      <div class="detailInfo">
+        <div class="flex justify-start items-center gap-3 px-2">
+          <div class="smallBtn"><i class="fa-solid fa-rectangle-ad"></i></div>
+          <div class="smallBtn"><i class="fa-regular fa-closed-captioning"></i></div>
+          <div *ngIf="releaseDate">{{ releaseDate }}</div>
+          <div>•</div>
+          <div *ngIf="ageRating">{{ ageRating }}</div>
+        </div>
+        <div *ngIf="genres.length > 0" class="flex justify-start items-center gap-3 px-2">
+          <small class="cursor-pointer hover:underline" *ngFor="let genre of genres">{{ genre }}</small>
+        </div>
+      </div>
+      <div class="detailControlls">
+        <div class="flex justify-start items-center gap-3 px-1">
+          <button class="bigBtn bg-white text-black"><i class="pe-2 fa-solid fa-play fa-xl"></i>{{playString}}</button>
+          <button class="bigBtn">{{trailerString}}</button>
+          <button class="radiusBtn"><i class="fa-solid fa-plus px-1"></i></button>
+          <button class="radiusBtn"><i class="fa-solid fa-users"></i></button>
+        </div>
+      </div>
+      <div class="detailDesription">
+        <p>{{description}}</p>
+      </div>
   </div>
+
+  <div class="container pt-10">
+    <h2 class="underline">Suggeriti per te</h2>
+  </div>
+
+  <app-slider [cards]="randomMovies"></app-slider>
   
 </app-layout>
 
-<!-- <div class="slide-detail">
-  <div class="detail-header">
-    <img *ngIf="posterPath" [src]="getImageUrl(posterPath)" alt="{{ title }}" class="poster" />
-    <div class="info">
-      <div class="metadata">
-        <span *ngIf="releaseDate">Uscita: {{ releaseDate }}</span>
-        <span *ngIf="runtime"> | Runtime: {{ runtime }} mins</span>
-      </div>
-      <div class="genres">
-        <span *ngFor="let genre of genres" class="genre">{{ genre }}</span>
-      </div>
-    </div>
-  </div>
-  <div class="actions">
-    <button class="action-button">Play</button>
-    <button class="action-button">Trailer</button>
-    <button class="action-button">Add to Watchlist</button>
-  </div>
-</div> -->
