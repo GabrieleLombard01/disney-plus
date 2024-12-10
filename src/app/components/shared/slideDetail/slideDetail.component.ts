@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ModalService } from 'src/app/services/modal/modal.service';
 
 @Component({
   selector: 'app-slideDetail',
@@ -8,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./slideDetail.component.scss'],
 })
 export class SlideDetailComponent implements OnInit {
+  @ViewChild('modalContent') modalContent!: TemplateRef<any>;
   title: string | null = null;
   posterPath: string | null = null;
   description: string | null = null;
@@ -20,6 +22,9 @@ export class SlideDetailComponent implements OnInit {
   trailerString: string = 'TRAILER';
   randomMovies: any[] = [];
   apiKey: string = 'e2ff90b9990a923f82a68760dd1578d6';
+  suggestedString: string = 'Suggeriti per te';
+  dynamicContent = `<p>Questo sito fa parte di un'esercitazione personale. Pertanto non è possibile riprodurre il video selezionato. Per poter riprodurre correttamente i contenuti di Disney +, recatevi sul loro sito: <a target=”_blank” href="https://www.disneyplus.com/" class="text-blue-900 font-bold hover:underline">clicca qui per il sito originale!</a></p>`;
+
 
 
   // Mappa dei generi
@@ -44,10 +49,11 @@ export class SlideDetailComponent implements OnInit {
     '10752': 'Guerra',
     '37': 'Western',
   };
-
+  
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient
+    private http: HttpClient,
+    private modalService: ModalService
   ) {}
 
   ngOnInit(): void {
@@ -89,4 +95,9 @@ export class SlideDetailComponent implements OnInit {
   getRandomPage(): number {
     return Math.floor(Math.random() * 500) + 1;
   }
+
+  openModal() {
+    this.modalService.openModal('ATTENZIONE', this.dynamicContent);
+  }
+  
 }

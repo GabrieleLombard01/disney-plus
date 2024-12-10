@@ -17,6 +17,7 @@ import { CompanyFilterComponent } from './components/companyFilter/companyFilter
 import { CommonModule } from '@angular/common';
 import { SliderComponent } from './components/slider/slider.component';
 import { SlideDetailComponent } from './components/shared/slideDetail/slideDetail.component';
+import { ModalComponent } from './components/shared/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SlideDetailComponent } from './components/shared/slideDetail/slideDetai
     FooterComponent,
     NavFooterComponent,
     AvatarComponent,
+    ModalComponent,
     // Pagine:
     HomeComponent,
     SearchComponent,

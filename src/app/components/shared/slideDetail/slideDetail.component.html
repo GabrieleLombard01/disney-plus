@@ -23,7 +23,7 @@
       </div>
       <div class="detailControlls">
         <div class="flex justify-start items-center gap-3 px-1">
-          <button class="bigBtn bg-white text-black"><i class="pe-2 fa-solid fa-play fa-xl"></i>{{playString}}</button>
+          <button (click)="openModal()" class="bigBtn bg-white text-black"><i class="pe-2 fa-solid fa-play fa-xl"></i>{{playString}}</button>
           <button class="bigBtn">{{trailerString}}</button>
           <button class="radiusBtn"><i class="fa-solid fa-plus px-1"></i></button>
           <button class="radiusBtn"><i class="fa-solid fa-users"></i></button>
@@ -35,10 +35,9 @@
   </div>
 
   <div class="container pt-10">
-    <h2 class="underline">Suggeriti per te</h2>
+    <h2 class="underline">{{suggestedString}}</h2>
   </div>
 
   <app-slider [cards]="randomMovies"></app-slider>
   
 </app-layout>
-

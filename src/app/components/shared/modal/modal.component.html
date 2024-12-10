@@ -1,0 +1,19 @@
+<div class="bgModal" *ngIf="isOpen">
+
+  <div class="modal">
+
+    <div class="modalHeader">
+      <div class="flex justify-between items-center">
+          <h1 class="modalTitle">{{ title }}</h1>
+          <button type="button" class="close" (click)="closeModal()"><i class="fa-solid fa-xmark fa-xl"></i></button>
+      </div>
+    </div>
+
+    <div class="modalContent">
+      <div [innerHTML]="contentHtml"></div>
+    </div>
+
+  </div>
+
+</div>
+

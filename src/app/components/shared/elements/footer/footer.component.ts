@@ -35,7 +35,6 @@ export class FooterComponent implements OnInit {
 
   fetchData() {
     this.http.get<FooterData>(this.urlData).subscribe((data) => {
-      console.log('Dati ricevuti:', data);
       this.data = data;
     });
   }
