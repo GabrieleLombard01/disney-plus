@@ -4,27 +4,33 @@
     "navLinks": [
       {
         "title": "HOME",
-        "icon": "<i class=\"fa-solid fa-house\"></i>"
+        "icon": "<i class=\"fa-solid fa-house\"></i>",
+        "path": "/"
       },
       {
         "title": "SEARCH",
-        "icon": "<i class=\"fa-solid fa-magnifying-glass\"></i>"
+        "icon": "<i class=\"fa-solid fa-magnifying-glass\"></i>",
+        "path": "/cerca"
       },
       {
         "title": "WATCHLIST",
-        "icon": "<i class=\"fa-solid fa-plus\"></i>"
+        "icon": "<i class=\"fa-solid fa-plus\"></i>",
+        "path": ""
       },
       {
         "title": "ORIGINALS",
-        "icon": "<i class=\"fa-solid fa-star\"></i>"
+        "icon": "<i class=\"fa-solid fa-star\"></i>",
+        "path": ""
       },
       {
         "title": "MOVIES",
-        "icon": "<i class=\"fa-solid fa-tape\"></i>"
+        "icon": "<i class=\"fa-solid fa-tape\"></i>",
+        "path": ""
       },
       {
         "title": "SERIES",
-        "icon": "<i class=\"fa-solid fa-tv\"></i>"
+        "icon": "<i class=\"fa-solid fa-tv\"></i>",
+        "path": ""
       }
     ]
   }

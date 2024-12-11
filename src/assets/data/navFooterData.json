@@ -1,14 +1,17 @@
 [
   {
     "title": "HOME",
-    "icon": "<i class=\"fa-solid fa-house\"></i>"
+    "icon": "<i class=\"fa-solid fa-house\"></i>",
+    "path": "/"
   },
   {
     "title": "SEARCH",
-    "icon": "<i class=\"fa-solid fa-magnifying-glass\"></i>"
+    "icon": "<i class=\"fa-solid fa-magnifying-glass\"></i>",
+    "path": "/cerca"
   },
   {
     "title": "DOWNLOAD",
-    "icon": "<i class=\"fa-solid fa-download\"></i>"
+    "icon": "<i class=\"fa-solid fa-download\"></i>",
+    "path": ""
   }
 ]

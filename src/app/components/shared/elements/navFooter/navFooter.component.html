@@ -1,7 +1,7 @@
 <nav class="block md:hidden">
     <div class="container">
         <div class="mx-auto max-w-[400px] flex justify-between items-center">
-          <a *ngFor="let link of data" href="#" [innerHTML]="link.icon"></a>
+          <a *ngFor="let link of data" href="#"  [routerLink]="link.path" [innerHTML]="link.icon"></a>
           <app-avatar [hideName]="true"></app-avatar>
         </div>
     </div>

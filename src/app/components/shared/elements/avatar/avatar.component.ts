@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ModalService } from 'src/app/services/modal/modal.service';
 
 @Component({
   selector: 'app-avatar',
@@ -9,9 +10,22 @@ export class AvatarComponent implements OnInit {
 
   @Input() hideName: boolean = false;
 
-  constructor() { }
+  dynamicContent: string = 'test'
+
+  constructor(
+    private modalService: ModalService
+  ) { }
 
   ngOnInit() {
+  }
+
+  openAvatarModal() {
+    this.modalService.openModal(
+      'Chi sta guardando?', 
+      this.dynamicContent, 
+      false, 
+      false
+    );
   }
 
 }

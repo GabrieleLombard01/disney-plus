@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 interface NavLink {
   title: string;
   icon: string;
+  path: string;
 }
 
 interface HeaderData {
