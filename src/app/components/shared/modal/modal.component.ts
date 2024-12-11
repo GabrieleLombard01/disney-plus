@@ -10,6 +10,10 @@ export class ModalComponent implements OnInit {
   isOpen = false;
   title = '';
   contentHtml: string = '';
+  btnOption1: string = 'OK';
+  btnOption2: string = 'ANNULLA';
+  showFirstBtn = true;
+  showSecondBtn = true;
 
   constructor(private modalService: ModalService) {}
 
@@ -18,6 +22,8 @@ export class ModalComponent implements OnInit {
       this.isOpen = data.isOpen;
       this.title = data.title;
       this.contentHtml = data.content || '';
+      this.showFirstBtn = data.showFirstBtn;
+      this.showSecondBtn = data.showSecondBtn;
     });
   }
 

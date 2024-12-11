@@ -10,10 +10,12 @@
     align-items: center;
 }
 .bgModal .modal{
-    border: solid white 1px;
+    border: solid rgb(99, 99, 99) 1px;
     border-radius: 5px;
     width: 95%;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.95);
+    -webkit-box-shadow: 0px 0px 15px 5px #818181; 
+    box-shadow: 0px 0px 15px 5px #818181;
 }
 .modal .modalHeader{
     width: 100%;
@@ -23,6 +25,9 @@
     }
 }
 .modal .modalContent{
+    padding: 0 0.5rem 0.5rem 0.5rem;
+}
+.modal .modalFooter{
     padding: 0.5rem;
 }
 @media screen and (min-width:640px) {

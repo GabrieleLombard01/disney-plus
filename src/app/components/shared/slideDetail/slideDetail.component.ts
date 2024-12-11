@@ -10,6 +10,7 @@ import { ModalService } from 'src/app/services/modal/modal.service';
 })
 export class SlideDetailComponent implements OnInit {
   @ViewChild('modalContent') modalContent!: TemplateRef<any>;
+
   title: string | null = null;
   posterPath: string | null = null;
   description: string | null = null;
@@ -23,11 +24,9 @@ export class SlideDetailComponent implements OnInit {
   randomMovies: any[] = [];
   apiKey: string = 'e2ff90b9990a923f82a68760dd1578d6';
   suggestedString: string = 'Suggeriti per te';
-  dynamicContent = `<p>Questo sito fa parte di un'esercitazione personale. Pertanto non è possibile riprodurre il video selezionato. Per poter riprodurre correttamente i contenuti di Disney +, recatevi sul loro sito: <a target=”_blank” href="https://www.disneyplus.com/" class="text-blue-900 font-bold hover:underline">clicca qui per il sito originale!</a></p>`;
+  dynamicContent1: string = '';
+  dynamicContent2: string = '';
 
-
-
-  // Mappa dei generi
   genreMap: { [key: string]: string } = {
     '28': 'Azione',
     '12': 'Avventura',
@@ -49,7 +48,7 @@ export class SlideDetailComponent implements OnInit {
     '10752': 'Guerra',
     '37': 'Western',
   };
-  
+
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
@@ -61,17 +60,24 @@ export class SlideDetailComponent implements OnInit {
     if (typeof window !== 'undefined') {
       window.scrollTo(0, 0);
     }
+
+    // Carichiamo i parametri del film
     this.route.queryParams.subscribe(params => {
       this.title = params['title'];
       this.posterPath = params['poster_path'];
-      this.description = params['description'] || 'Descrizione non disponibile'; // Valore predefinito
+      this.description = params['description'] || 'Descrizione non disponibile';
       this.genres = params['genres']
-      ? params['genres'].split(',').map((id: string) => this.genreMap[id.trim()] || 'Sconosciuto')
-      : [];
+        ? params['genres'].split(',').map((id: string) => this.genreMap[id.trim()] || 'Sconosciuto')
+        : [];
       this.runtime = params['runtime'] ? +params['runtime'] : null;
       this.releaseDate = params['release_date'] || null;
       this.backdropPath = params['backdrop_path'];
       this.ageRating = params['age_rating'] || 'Età non specificata';
+    });
+
+    this.http.get<any>('assets/data/slideDetailData.json').subscribe(data => {
+      this.dynamicContent1 = data.dynamicContent1;
+      this.dynamicContent2 = data.dynamicContent2;
     });
   }
 
@@ -96,8 +102,21 @@ export class SlideDetailComponent implements OnInit {
     return Math.floor(Math.random() * 500) + 1;
   }
 
-  openModal() {
-    this.modalService.openModal('ATTENZIONE', this.dynamicContent);
+  openPlayModal() {
+    this.modalService.openModal(
+      'Film non disponibile', 
+      this.dynamicContent1, 
+      true, 
+      false
+    );
   }
-  
+
+  openTrailerModal() {
+    this.modalService.openModal(
+      'Trailer non disponibile', 
+      this.dynamicContent2, 
+      true, 
+      false
+    );
+  }
 }

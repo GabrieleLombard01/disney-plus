@@ -1,0 +1,26 @@
+.btn{
+    border: solid 0.5px;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+}
+.primaryBtn{
+    border-color: black;
+    color: black;
+    background-color: white;
+}
+.secondaryBtn{
+    border-color: white;
+    color: white;
+    background-color: black;
+}
+.primaryBtn:hover{
+    border-color: white;
+    color: white;
+    background-color: black;
+}
+.secondaryBtn:hover{
+    border-color: black;
+    color: black;
+    background-color: white;
+}
