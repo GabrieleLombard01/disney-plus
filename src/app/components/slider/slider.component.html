@@ -1,6 +1,6 @@
 <div class="carousel-container" *ngIf="displayCards && displayCards.length">
   <button class="nav-btn left" (click)="prev()">&#10094;</button>
-  <div class="carousel-slider">
+  <div class="carousel-slider" #sliderContainer>
     <div 
       class="carousel-card cursor-pointer" 
       *ngFor="let card of displayCards"

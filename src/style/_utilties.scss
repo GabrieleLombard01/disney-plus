@@ -1,11 +1,19 @@
 .container{
     max-width: 1200px;
     margin: auto;
-    // border: dashed red 1px;
 }
 .content{
     min-height: 70vh;
     margin-top: 50px;
+}
+#genreSelect{
+    background-color: black;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding-left: 3px;
+}
+.active{
+    font-weight: 800;
 }
 @media screen and (min-width:930px) {
     .content{

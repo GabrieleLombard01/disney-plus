@@ -15,7 +15,7 @@
       {
         "title": "WATCHLIST",
         "icon": "<i class=\"fa-solid fa-plus\"></i>",
-        "path": ""
+        "path": "/watchlist"
       },
       {
         "title": "ORIGINALS",
@@ -30,7 +30,7 @@
       {
         "title": "SERIES",
         "icon": "<i class=\"fa-solid fa-tv\"></i>",
-        "path": ""
+        "path": "/serie"
       }
     ]
   }

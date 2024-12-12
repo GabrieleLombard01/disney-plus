@@ -21,6 +21,9 @@ import { ModalComponent } from './components/shared/modal/modal.component';
 import { MoviesComponent } from './components/pages/movies/movies.component';
 import { GridComponent } from './components/shared/grid/grid.component';
 import { SpinnerComponent } from './components/shared/spinner/spinner.component';
+import { SeriesComponent } from './components/pages/series/series.component';
+import { FormsModule } from '@angular/forms';
+import { WatchlistComponent } from './components/pages/watchlist/watchlist.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,8 @@ import { SpinnerComponent } from './components/shared/spinner/spinner.component'
     HomeComponent,
     SearchComponent,
     MoviesComponent,
+    SeriesComponent,
+    WatchlistComponent,
     // Altri componenti:
     CarouselComponent,
     CompanyFilterComponent,
@@ -49,7 +54,8 @@ import { SpinnerComponent } from './components/shared/spinner/spinner.component'
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

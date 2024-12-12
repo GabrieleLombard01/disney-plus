@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,8 +6,10 @@ import { Router } from '@angular/router';
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss']
 })
-export class SliderComponent implements OnInit, OnChanges {
+export class SliderComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() cards: any[] = [];
+  @ViewChild('sliderContainer', { static: false }) sliderContainer!: ElementRef;
+
   displayCards: any[] = [];
   currentIndex = 0;
   isTransitioning = false;
@@ -24,6 +26,14 @@ export class SliderComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['cards'] && this.cards && this.cards.length > 0) {
       this.setupCarousel();
+    }
+  }
+
+  ngAfterViewInit(): void {
+    // Dopo che la view è inizializzata, possiamo fare jumpToCard
+    // se necessario. Oppure lasciare la chiamata dopo setupCarousel.
+    if (this.cards && this.cards.length > 0) {
+      this.jumpToCard();
     }
   }
 
@@ -65,7 +75,7 @@ export class SliderComponent implements OnInit, OnChanges {
   }
 
   scrollCarousel(): void {
-    const slider = document.querySelector('.carousel-slider') as HTMLElement;
+    const slider = this.sliderContainer.nativeElement as HTMLElement;
     const card = slider.querySelector('.carousel-card') as HTMLElement;
     if (!card) return;
     const cardWidth = card.clientWidth;
@@ -73,11 +83,13 @@ export class SliderComponent implements OnInit, OnChanges {
     const totalScroll = this.currentIndex * (cardWidth + gap);
     slider.style.transition = 'transform 0.5s ease-in-out';
     slider.style.transform = `translateX(-${totalScroll}px)`;
+    
+    slider.removeEventListener('transitionend', this.onTransitionEnd);
     slider.addEventListener('transitionend', this.onTransitionEnd);
   }
 
   onTransitionEnd = () => {
-    const slider = document.querySelector('.carousel-slider') as HTMLElement;
+    const slider = this.sliderContainer.nativeElement as HTMLElement;
     slider.removeEventListener('transitionend', this.onTransitionEnd);
 
     if (this.currentIndex >= this.cards.length + this.visibleCards) {
@@ -90,7 +102,7 @@ export class SliderComponent implements OnInit, OnChanges {
   };
 
   jumpToCard(): void {
-    const slider = document.querySelector('.carousel-slider') as HTMLElement;
+    const slider = this.sliderContainer.nativeElement as HTMLElement;
     const card = slider.querySelector('.carousel-card') as HTMLElement;
     if (!card) return;
     const cardWidth = card.clientWidth;
@@ -115,7 +127,6 @@ export class SliderComponent implements OnInit, OnChanges {
         release_date: card.release_date,
       },
     }).then(() => {
-      // window.location.reload();
       if (typeof window !== 'undefined') {
         window.scrollTo(0, 0);
       }

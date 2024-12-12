@@ -1,12 +1,19 @@
 <app-layout>
 
-    <app-carousel></app-carousel>
+  <app-carousel></app-carousel>
   
-    <app-companyFilter></app-companyFilter>
+  <app-companyFilter></app-companyFilter>
 
-    <app-slider [cards]="FamilyMovies"></app-slider>
-  
-    <h1 class="text-center mt-5">Questa è la home</h1>
-  
-  </app-layout>
-  
+  <h1 class="ms-3">{{firstTitle}}</h1>
+  <app-slider [cards]="FamilyMovies"></app-slider>
+
+  <h1 class="ms-3">{{secondTitle}}</h1>
+  <app-slider [cards]="WhatToWatchMovies"></app-slider>
+
+  <h1 class="ms-3">{{thirdTitle}}</h1>
+  <app-slider [cards]="ActionMovies"></app-slider>
+
+  <h1 class="ms-3">{{fourthTitle}}</h1>
+  <app-slider [cards]="TrendingMovies"></app-slider>
+
+</app-layout>

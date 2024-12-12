@@ -10,7 +10,7 @@ export class AvatarComponent implements OnInit {
 
   @Input() hideName: boolean = false;
 
-  dynamicContent: string = 'test'
+  dynamicContent: string = 'Attenzione! Questa funzione non è ancora stata implementata. Prova più tardi.'
 
   constructor(
     private modalService: ModalService
@@ -23,7 +23,7 @@ export class AvatarComponent implements OnInit {
     this.modalService.openModal(
       'Chi sta guardando?', 
       this.dynamicContent, 
-      false, 
+      true, 
       false
     );
   }

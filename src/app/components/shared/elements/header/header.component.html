@@ -14,7 +14,7 @@
         </li>
         <li *ngFor="let link of data.navLinks">
           <span class="me-1" [innerHTML]="link.icon"></span>
-          <a [routerLink]="link.path" href="#">{{link.title}}</a>
+          <a class="hover:underline" [routerLink]="link.path" href="#">{{link.title}}</a>
         </li>
       </ul>
       <app-avatar></app-avatar>

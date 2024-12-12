@@ -1,5 +1,20 @@
 <app-layout>
 
-  <h1 class="text-center mt-5">Questa è la Search page!</h1>
+  <div class="container">
+    <input 
+      type="text" 
+      [(ngModel)]="searchQuery" 
+      (keyup.enter)="onSearch()" 
+      class="my-5 ps-2"
+      placeholder="Cerca un film o una serie TV..."
+    >
+
+    <div class="px-3 flex justify-start items-center">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+
+
+  <app-grid [cards]="displayedMovies"></app-grid>
 
 </app-layout>
