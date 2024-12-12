@@ -20,6 +20,9 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.loadRandomMovies();
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+    }
   }
 
   loadRandomMovies(): void {

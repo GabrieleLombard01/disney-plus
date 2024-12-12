@@ -27,6 +27,9 @@ export class OriginalsComponent implements OnInit {
     this.loadSeries();
     this.loadMovies();
     this.loadShorts();
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+    }
   }
 
   loadFeatured(): void {
