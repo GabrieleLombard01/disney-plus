@@ -1,0 +1,16 @@
+<app-layout>
+  <div class="container py-3">
+    <div class="px-3 flex justify-start items-center gap-2">
+      <h1>{{title}}</h1>
+      
+      <div>
+        <select id="genreSelect" (change)="onGenreChange($event)">
+          <option value="">{{firstOption}}</option>
+          <option *ngFor="let genre of genres" [value]="genre.id">{{ genre.name }}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <app-grid [cards]="randomMovies"></app-grid>
+</app-layout>

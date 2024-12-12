@@ -18,6 +18,9 @@ import { CommonModule } from '@angular/common';
 import { SliderComponent } from './components/slider/slider.component';
 import { SlideDetailComponent } from './components/shared/slideDetail/slideDetail.component';
 import { ModalComponent } from './components/shared/modal/modal.component';
+import { MoviesComponent } from './components/pages/movies/movies.component';
+import { GridComponent } from './components/shared/grid/grid.component';
+import { SpinnerComponent } from './components/shared/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -29,14 +32,17 @@ import { ModalComponent } from './components/shared/modal/modal.component';
     NavFooterComponent,
     AvatarComponent,
     ModalComponent,
+    SpinnerComponent,
     // Pagine:
     HomeComponent,
     SearchComponent,
+    MoviesComponent,
     // Altri componenti:
     CarouselComponent,
     CompanyFilterComponent,
     SliderComponent,
-    SlideDetailComponent
+    SlideDetailComponent,
+    GridComponent
   ],
   imports: [
     BrowserModule,

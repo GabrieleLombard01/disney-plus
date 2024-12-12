@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="cardDeck mb-5">
+    <div 
+      class="card w-1/2 sm:w-2/6 md:w-1/4"
+      *ngFor="let card of cards" 
+      (click)="onCardClick(card)"
+    >
+      <img [src]="getImageUrl(card.poster_path)" alt="{{ card.title }}">
+    </div>
+  </div>
+</div>

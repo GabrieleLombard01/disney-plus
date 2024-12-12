@@ -14,6 +14,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.loadMovies();
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+    }
   }
 
   loadMovies(): void {
