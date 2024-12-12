@@ -16,6 +16,9 @@ export class WatchlistComponent implements OnInit {
 
   ngOnInit() {
     this.loadFamilyMovies();
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+    }
   }
 
   loadFamilyMovies(): void {

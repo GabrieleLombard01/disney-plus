@@ -6,6 +6,7 @@ import { SlideDetailComponent } from './components/shared/slideDetail/slideDetai
 import { MoviesComponent } from './components/pages/movies/movies.component';
 import { SeriesComponent } from './components/pages/series/series.component';
 import { WatchlistComponent } from './components/pages/watchlist/watchlist.component';
+import { OriginalsComponent } from './components/pages/originals/originals.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
     { path: 'film', component: MoviesComponent},
     { path: 'serie', component: SeriesComponent},
     { path: 'watchlist', component: WatchlistComponent},
+    { path: 'originals', component: OriginalsComponent},
     { path: 'slide-detail', component: SlideDetailComponent }
 ];
 

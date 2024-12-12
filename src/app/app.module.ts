@@ -24,6 +24,7 @@ import { SpinnerComponent } from './components/shared/spinner/spinner.component'
 import { SeriesComponent } from './components/pages/series/series.component';
 import { FormsModule } from '@angular/forms';
 import { WatchlistComponent } from './components/pages/watchlist/watchlist.component';
+import { OriginalsComponent } from './components/pages/originals/originals.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { WatchlistComponent } from './components/pages/watchlist/watchlist.compo
     MoviesComponent,
     SeriesComponent,
     WatchlistComponent,
+    OriginalsComponent,
     // Altri componenti:
     CarouselComponent,
     CompanyFilterComponent,
